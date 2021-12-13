@@ -1,7 +1,7 @@
 <template>
   <div class="card-group">
     <b-card-group deck class="card-group">
-      <b-card  border-variant="light" :header="getName(node.name)" class="text-center" :footer="getFooter(node.text)" bg-variant="info">
+      <b-card  border-variant="light" :header="getName(node.name)" class="text-center" :footer="getFooter(node.text)" bg-variant="warning">
       </b-card>
     </b-card-group>
   </div>
@@ -26,9 +26,6 @@ export default {
       type: Object,
       required: true,
     },
-    mainProps: {
-
-    }
   }
 };
 </script>
