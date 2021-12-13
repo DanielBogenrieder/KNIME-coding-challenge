@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <input type="search" v-model="node" list="nodes" placeholder="Add new node..." @keyup.enter="addNode(node)">
+    <input type="search" v-model="node" list="nodes" placeholder="Add new node..." @keyup.enter="addNode">
     <datalist id="nodes">
       <!-- <option :v-for="node in nodes">{{node.name}}</option> -->
       <option value="Data Generator"></option>
@@ -20,21 +20,21 @@ export default {
     NodeContainer,
   },
   methods: {
-    addNode: function(node) {
+    addNode: function() {
       this.nodes.push({
         id: this.idCounter++,
-        name: node.name,
-        text: node.text,
+        name: this.name,
+        text: this.text,
       });
       console.log(this.nodes);
     },
-
   },
+
   
   data() {
     return {
       idCounter: 2,
-      mainProps: { width: 130, height: 120},
+      mainProps: { width: 100, height: 100},
 
       nodes: [
         {
